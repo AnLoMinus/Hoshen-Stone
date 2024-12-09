@@ -1,0 +1,491 @@
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #34495e;
+  --accent-color: #e67e22;
+  --text-color: #2c3e50;
+  --background-color: #ecf0f1;
+  --table-border-color: #bdc3c7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+h1 {
+  color: var(--primary-color);
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.header-decoration {
+  width: 100px;
+  height: 4px;
+  background: var(--accent-color);
+  margin: 0 auto;
+}
+
+.intro {
+  background: linear-gradient(to bottom right, #ffffff, #f8f9fa);
+  padding: 3rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  margin-bottom: 4rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.intro::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(to right, var(--accent-color), #f1c40f);
+}
+
+.intro h2 {
+  color: var(--primary-color);
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.intro p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: #444;
+  animation: slideIn 0.8s ease-out;
+  animation-fill-mode: both;
+}
+
+.intro p:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.intro p:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.intro p:last-child {
+  margin-bottom: 0;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stones-grid {
+  background: linear-gradient(
+    to bottom right,
+    rgba(44, 62, 80, 0.5),
+    rgba(52, 73, 94, 0.5)
+  );
+  padding: 3rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.stones-grid h2 {
+  color: white;
+  text-align: center;
+  margin-bottom: 2rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  padding: 1rem;
+}
+
+.stone-card {
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease, box-shadow 0.4s ease;
+  position: relative;
+  padding: 1.5rem;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.stone-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8);
+}
+
+.stone-color {
+  display: none;
+}
+
+.stone-content {
+  text-align: center;
+}
+
+.stone-name {
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
+  font-weight: bold;
+}
+
+.stone-tribe {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 90%;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.close-modal {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: var(--primary-color);
+}
+
+.stone-colors {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.color-sample {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .stones-grid {
+    padding: 2rem 1rem;
+  }
+
+  .cards-container {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Stone-specific colors */
+.stone-card[data-stone="odem"] {
+  background: linear-gradient(45deg, #ff0000, #cc0000);
+  color: #ffcccc;
+  box-shadow: 0 8px 25px rgba(255, 0, 0, 0.6);
+  border: 3px solid rgba(255, 0, 0, 0.6);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.stone-card[data-stone="pitda"] {
+  background: linear-gradient(45deg, #ccff00, #99cc00);
+  color: #336600;
+  box-shadow: 0 8px 25px rgba(153, 204, 0, 0.6);
+  border: 3px solid rgba(204, 255, 0, 0.6);
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+.stone-card[data-stone="bareket"] {
+  background: linear-gradient(45deg, #00ff00, #00cc00);
+  color: #003300;
+  box-shadow: 0 8px 25px rgba(0, 204, 0, 0.6);
+  border: 3px solid rgba(0, 255, 0, 0.6);
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+.stone-card[data-stone="nofech"] {
+  background: linear-gradient(45deg, #0000ff, #0000cc);
+  color: #ccccff;
+  box-shadow: 0 8px 25px rgba(0, 0, 255, 0.6);
+  border: 3px solid rgba(0, 0, 255, 0.6);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.stone-card[data-stone="sapir"] {
+  background: linear-gradient(45deg, #000066, #000044);
+  color: #9999ff;
+  box-shadow: 0 8px 25px rgba(0, 0, 102, 0.7);
+  border: 3px solid rgba(0, 0, 102, 0.6);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.stone-card[data-stone="yahalom"] {
+  background: linear-gradient(45deg, #ffffff, #f0f0f0);
+  color: #666666;
+  box-shadow: 0 8px 25px rgba(200, 200, 200, 0.9);
+  border: 3px solid rgba(200, 200, 200, 0.6);
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.stone-card[data-stone="leshem"] {
+  background: linear-gradient(45deg, #ffffff, #f5f5f5);
+  color: #555555;
+  box-shadow: 0 8px 25px rgba(200, 200, 200, 0.9);
+  border: 3px solid rgba(200, 200, 200, 0.6);
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.stone-card[data-stone="shvo"] {
+  background: linear-gradient(45deg, #006666, #004444);
+  color: #99ffff;
+  box-shadow: 0 8px 25px rgba(0, 102, 102, 0.7);
+  border: 3px solid rgba(0, 102, 102, 0.6);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.stone-card[data-stone="achlama"] {
+  background: linear-gradient(45deg, #660066, #440044);
+  color: #ffccff;
+  box-shadow: 0 8px 25px rgba(102, 0, 102, 0.7);
+  border: 3px solid rgba(102, 0, 102, 0.6);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.stone-card[data-stone="tarshish"] {
+  background: linear-gradient(45deg, #ccff99, #99cc66);
+  color: #336633;
+  box-shadow: 0 8px 25px rgba(153, 204, 102, 0.7);
+  border: 3px solid rgba(204, 255, 153, 0.6);
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+.stone-card[data-stone="shoham"] {
+  background: linear-gradient(45deg, #00ff99, #00cc66);
+  color: #003322;
+  box-shadow: 0 8px 25px rgba(0, 204, 102, 0.7);
+  border: 3px solid rgba(0, 255, 153, 0.6);
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+.stone-card[data-stone="yashfe"] {
+  background: linear-gradient(45deg, #006633, #004422);
+  color: #99ff99;
+  box-shadow: 0 8px 25px rgba(0, 102, 51, 0.7);
+  border: 3px solid rgba(0, 102, 51, 0.6);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th,
+td {
+  padding: 1rem;
+  text-align: right;
+  border: 1px solid var(--table-border-color);
+}
+
+th {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+tr:hover {
+  background-color: #f1f4f6;
+}
+
+footer {
+  margin-top: 4rem;
+  padding: 3rem 2rem;
+  background: linear-gradient(to bottom right, #2c3e50, #34495e);
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+footer p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  opacity: 0.9;
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: var(--accent-color);
+  border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  th,
+  td {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .intro {
+    padding: 2rem;
+  }
+
+  .intro h2 {
+    font-size: 1.8rem;
+  }
+
+  .intro p {
+    font-size: 1rem;
+  }
+
+  footer {
+    padding: 2rem 1.5rem;
+  }
+
+  footer p {
+    font-size: 1rem;
+  }
+}
+
+/* Add some nice animations */
+.intro,
+.stones-grid,
+footer {
+  animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* עדכון אפקט hover עם הדגשת המסגרת */
+.stone-card[data-stone="odem"]:hover {
+  border-color: rgba(255, 0, 0, 0.9);
+}
+.stone-card[data-stone="pitda"]:hover {
+  border-color: rgba(204, 255, 0, 0.9);
+}
+.stone-card[data-stone="bareket"]:hover {
+  border-color: rgba(0, 255, 0, 0.9);
+}
+.stone-card[data-stone="nofech"]:hover {
+  border-color: rgba(0, 0, 255, 0.9);
+}
+.stone-card[data-stone="sapir"]:hover {
+  border-color: rgba(0, 0, 102, 0.9);
+}
+.stone-card[data-stone="yahalom"]:hover {
+  border-color: rgba(200, 200, 200, 0.9);
+}
+.stone-card[data-stone="leshem"]:hover {
+  border-color: rgba(200, 200, 200, 0.9);
+}
+.stone-card[data-stone="shvo"]:hover {
+  border-color: rgba(0, 102, 102, 0.9);
+}
+.stone-card[data-stone="achlama"]:hover {
+  border-color: rgba(102, 0, 102, 0.9);
+}
+.stone-card[data-stone="tarshish"]:hover {
+  border-color: rgba(204, 255, 153, 0.9);
+}
+.stone-card[data-stone="shoham"]:hover {
+  border-color: rgba(0, 255, 153, 0.9);
+}
+.stone-card[data-stone="yashfe"]:hover {
+  border-color: rgba(0, 102, 51, 0.9);
+}

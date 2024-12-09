@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>אבני החושן - סגולות ומשמעויות</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>אבני החושן</h1>
+            <div class="header-decoration"></div>
+        </header>
+
+        <section class="intro">
+            <h2>חושן המשפט - סמל לחיבור בין שמיים וארץ</h2>
+            <p>
+                חושן המשפט היה אחד מבגדי הכהונה החשובים ביותר שלבש הכהן הגדול בבית המקדש. החושן היה משובץ ב-12 אבנים
+                יקרות,
+                כל אחת מייצגת שבט מ-12 שבטי ישראל. על כל אבן היה חרוט שמו של אחד השבטים.
+            </p>
+            <p>
+                האבנים בחושן לא היו רק לנוי - הן שימשו ככלי קודש לתקשורת עם הקב"ה. האותיות החרוטות על האבנים היו מאירות
+                בסדר מסוים
+                כדי לענות על שאלות גורליות ולתת הכוונה לעם ישראל.
+            </p>
+            <p>
+                לכל אבן בחושן יש צבע ייחודי, משמעות רוחנית, וסגולות מיוחדות המשויכות אליה על פי המסורת היהודית.
+                האבנים מסודרות בארבע שורות של שלוש אבנים כל אחת, כסדר לידתם של השבטים.
+            </p>
+        </section>
+
+        <section class="stones-grid">
+            <h2>12 אבני החושן</h2>
+            <div class="cards-container">
+                <div class="stone-card" data-stone="odem">
+                    <div class="stone-content">
+                        <h3 class="stone-name">אודם</h3>
+                        <div class="stone-tribe">שבט: ראובן</div>
+                    </div>
+                </div>
+                <div class="stone-card" data-stone="pitda">
+                    <div class="stone-content">
+                        <h3 class="stone-name">פטדה</h3>
+                        <div class="stone-tribe">שבט: שמעון</div>
+                    </div>
+                </div>
+                <div class="stone-card" data-stone="bareket">
+                    <div class="stone-content">
+                        <h3 class="stone-name">ברקת</h3>
+                        <div class="stone-tribe">שבט: לוי</div>
+                    </div>
+                </div>
+                <div class="stone-card" data-stone="nofech">
+                    <div class="stone-content">
+                        <h3 class="stone-name">נופך</h3>
+                        <div class="stone-tribe">שבט: יהודה</div>
+                    </div>
+                </div>
+                <div class="stone-card" data-stone="sapir">
+                    <div class="stone-content">
+                        <h3 class="stone-name">ספיר</h3>
+                        <div class="stone-tribe">שבט: יששכר</div>
+                    </div>
+                </div>
+                <div class="stone-card" data-stone="yahalom">
+                    <div class="stone-content">
+                        <h3 class="stone-name">יהלום</h3>
+                        <div class="stone-tribe">שבט: זבולון</div>
+                    </div>
+                </div>
+                <div class="stone-card" data-stone="leshem">
+                    <div class="stone-content">
+                        <h3 class="stone-name">לשם</h3>
+                        <div class="stone-tribe">שבט: דן</div>
+                    </div>
+                </div>
+                <div class="stone-card" data-stone="shvo">
+                    <div class="stone-content">
+                        <h3 class="stone-name">שבו</h3>
+                        <div class="stone-tribe">שבט: נפתלי</div>
+                    </div>
+                </div>
+                <div class="stone-card" data-stone="achlama">
+                    <div class="stone-content">
+                        <h3 class="stone-name">אחלמה</h3>
+                        <div class="stone-tribe">שבט: גד</div>
+                    </div>
+                </div>
+                <div class="stone-card" data-stone="tarshish">
+                    <div class="stone-content">
+                        <h3 class="stone-name">תרשיש</h3>
+                        <div class="stone-tribe">שבט: אשר</div>
+                    </div>
+                </div>
+                <div class="stone-card" data-stone="shoham">
+                    <div class="stone-content">
+                        <h3 class="stone-name">שוהם</h3>
+                        <div class="stone-tribe">שבט: יוסף</div>
+                    </div>
+                </div>
+                <div class="stone-card" data-stone="yashfe">
+                    <div class="stone-content">
+                        <h3 class="stone-name">ישפה</h3>
+                        <div class="stone-tribe">שבט: בנימין</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="modal" id="stoneModal">
+            <div class="modal-content">
+                <button class="close-modal">&times;</button>
+                <h2 id="modalTitle"></h2>
+                <div class="stone-colors">
+                    <div class="color-sample"></div>
+                    <div class="color-sample"></div>
+                    <div class="color-sample"></div>
+                </div>
+                <div id="modalContent"></div>
+            </div>
+        </div>
+
+        <footer>
+            <p>הסגולות שמצוינות כאן הן לרוב תיאורים רוחניים או מקובלים על פי מסורת קבלית או תיאורים בתנ"ך ובתרבויות
+                עתיקות.
+                כל אבן הייתה חלק ממערך מאורגן וקדוש שהכוהן הגדול השתמש בו ככלי לתקשורת עם אלוהים,
+                כולל בהכוונה וייעוץ לשבטי ישראל.</p>
+        </footer>
+    </div>
+
+    <script>
+        const stonesData = {
+            odem: {
+                name: 'אודם',
+                tribe: 'ראובן',
+                color: 'אדום',
+                properties: 'כוח, אנרגיה, אומץ, חיזוק הנפש',
+                colors: ['#ff0000', '#cc0000', '#990000']
+            },
+            pitda: {
+                name: 'פטדה',
+                tribe: 'שמעון',
+                color: 'ירוק-צהוב',
+                properties: 'שלווה, איזון, הרמוניה',
+                colors: ['#ccff00', '#99cc00', '#669900']
+            },
+            bareket: {
+                name: 'ברקת',
+                tribe: 'לוי',
+                color: 'ירוק',
+                properties: 'חכמה, צמיחה, שגשוג',
+                colors: ['#00ff00', '#00cc00', '#009900']
+            },
+            nofech: {
+                name: 'נופך',
+                tribe: 'יהודה',
+                color: 'כחול',
+                properties: 'מנהיגות, תקשורת, ביטחון',
+                colors: ['#0000ff', '#0000cc', '#000099']
+            },
+            sapir: {
+                name: 'ספיר',
+                tribe: 'יששכר',
+                color: 'כחול כהה',
+                properties: 'חכמה, לימוד, הבנה עמוקה',
+                colors: ['#000066', '#000044', '#000033']
+            },
+            yahalom: {
+                name: 'יהלום',
+                tribe: 'זבולון',
+                color: 'לבן צח',
+                properties: 'טוהר, בהירות, אמת',
+                colors: ['#ffffff', '#f0f0f0', '#e0e0e0']
+            },
+            leshem: {
+                name: 'לשם',
+                tribe: 'דן',
+                color: 'לבן-כסוף',
+                properties: 'צדק, שיפוט נכון, חוכמה',
+                colors: ['#ffffff', '#f5f5f5', '#eeeeee']
+            },
+            shvo: {
+                name: 'שבו',
+                tribe: 'נפתלי',
+                color: 'טורקיז כהה',
+                properties: 'זריזות, חופש, יצירתיות',
+                colors: ['#006666', '#004444', '#003333']
+            },
+            achlama: {
+                name: 'אחלמה',
+                tribe: 'גד',
+                color: 'סגול',
+                properties: 'רוחניות, השראה, חיבור לעולמות עליונים',
+                colors: ['#660066', '#440044', '#330033']
+            },
+            tarshish: {
+                name: 'תרשיש',
+                tribe: 'אשר',
+                color: 'ירוק-צהוב בהיר',
+                properties: 'שפע, ברכה, פוריות',
+                colors: ['#ccff99', '#99cc66', '#669944']
+            },
+            shoham: {
+                name: 'שוהם',
+                tribe: 'יוסף',
+                color: 'ירוק-טורקיז',
+                properties: 'חלומות, חזון, תקווה',
+                colors: ['#00ff99', '#00cc66', '#009944']
+            },
+            yashfe: {
+                name: 'ישפה',
+                tribe: 'בנימין',
+                color: 'ירוק כהה',
+                properties: 'הגנה, ביטחון, יציבות',
+                colors: ['#006633', '#004422', '#003311']
+            }
+        };
+
+        document.querySelectorAll('.stone-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const stoneKey = card.dataset.stone;
+                const stoneInfo = stonesData[stoneKey];
+
+                const modal = document.getElementById('stoneModal');
+                const modalTitle = document.getElementById('modalTitle');
+                const modalContent = document.getElementById('modalContent');
+
+                modalTitle.textContent = stoneInfo.name;
+                modalContent.innerHTML = `
+                    <p><strong>שבט:</strong> ${stoneInfo.tribe}</p>
+                    <p><strong>צבע:</strong> ${stoneInfo.color}</p>
+                    <p><strong>סגולות:</strong> ${stoneInfo.properties}</p>
+                `;
+
+                // Update color samples
+                const colorSamples = modal.querySelectorAll('.color-sample');
+                stoneInfo.colors.forEach((color, index) => {
+                    colorSamples[index].style.backgroundColor = color;
+                });
+
+                modal.classList.add('active');
+            });
+        });
+
+        document.querySelector('.close-modal').addEventListener('click', () => {
+            document.getElementById('stoneModal').classList.remove('active');
+        });
+
+        // Close modal when clicking outside
+        document.getElementById('stoneModal').addEventListener('click', (e) => {
+            if (e.target.classList.contains('modal')) {
+                e.target.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+
+</html>
